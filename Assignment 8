@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main()
+{
+    int i;
+    float m[5], total = 0, avg;
+
+    printf("Enter marks of 5 subjects:\n");
+
+    for(i = 0; i < 5; i++)
+    {
+        scanf("%f", &m[i]);
+        total = total + m[i];
+    }
+
+    avg = total / 5;
+
+    for(i = 0; i < 5; i++)
+    {
+        if(m[i] < 40)
+        {
+            printf("\nResult: Fail");
+            return 0;
+        }
+    }
+
+    printf("\nResult: Pass");
+    printf("\nAggregate = %.2f", avg);
+
+    if(avg > 75)
+        printf("\nGrade: Distinction");
+    else if(avg >= 60)
+        printf("\nGrade: First Division");
+    else if(avg >= 50)
+        printf("\nGrade: Second Division");
+    else if(avg >= 40)
+        printf("\nGrade: Third Division");
+
+    return 0;
+}
