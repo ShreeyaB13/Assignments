@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char str1[100], str2[100], rev[100];
+    int i, len, flag = 1;
+
+    printf("Enter first string: ");
+    scanf("%s", str1);
+
+    printf("Enter second string: ");
+    scanf("%s", str2);
+
+    len = strlen(str1);
+    printf("\nLength of string = %d", len);
+
+    for(i = 0; i < len; i++)
+        rev[i] = str1[len - i - 1];
+    rev[len] = '\0';
+
+    printf("\nReversed string = %s", rev);
+
+    if(strcmp(str1, str2) == 0)
+        printf("\nStrings are equal");
+    else
+        printf("\nStrings are not equal");
+
+    for(i = 0; i < len; i++)
+    {
+        if(str1[i] != rev[i])
+        {
+            flag = 0;
+            break;
+        }
+    }
+
+    if(flag == 1)
+        printf("\nPalindrome");
+    else
+        printf("\nNot a palindrome");
+
+    if(strstr(str1, str2) != NULL)
+        printf("\nSubstring found");
+    else
+        printf("\nSubstring not found");
+
+    return 0;
+}
